@@ -10,16 +10,16 @@
 
 
 <div>
-<% if signed_in? %>
-<%= current_user.username %>
-<%= link_to "(editar perfil) ", edit_user_registration_path(current_user) %>
-<%= link_to "Salir", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to "Registrarse", new_user_registration_path %>
-<%= link_to "Ingresar", new_user_session_path %>
-<% end %>
+  <p style="text-align:right;">
+    <% if signed_in? %>
+      <%= link_to current_user.username, edit_user_registration_path(current_user) %>
+      <%= link_to "(salir)", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Registrarse", new_user_registration_path %>
+      <%= link_to "Ingresar", new_user_session_path %>
+    <% end %>
+  </p>
 </div>
-
 
 <%= yield %>
 

@@ -2,6 +2,10 @@
 
 <tbody>
 
+<% if signed_in? %>
+    <center> <%= link_to "Crear un board", new_board_path %></center>
+<% end %>
+
 <ul style = "margin: 20px; border:2px solid gray;">
     <% @boards.each do |board| %>
         <li><%= link_to board.name, board %></li> 
