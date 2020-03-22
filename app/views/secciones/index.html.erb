@@ -10,10 +10,9 @@
         <b><%= post.title %></b> 
         <font color="gray"> <%= post.post_datetime %> </font>
         <%= link_to "Comentarios", post%>
-        <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %> 
-        <%# if signed_in? %>
-            <%#= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %> 
-        <%# end %>
+        <% if signed_in? %>
+            <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %> 
+        <% end %>
         <br>
         <%= post.content %>
     </p> 
