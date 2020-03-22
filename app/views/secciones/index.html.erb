@@ -1,20 +1,15 @@
-<h1><center><%= @board_name %></center></h1>
-
-<center> <%= link_to "Crear un post", new_post_path %></center>
+<h1><center> Índice </center></h1>
 
 <tbody>
 
+<%= link_to "games", '/secciones/1' %>
 
-<% @posts.each do |post| %>
+<% @secciones.each do |seccion| %>
     <p style = "margin: 20px; border:2px solid gray;">
-        <b><%= post.title %></b> 
-        <font color="gray"> <%= post.post_datetime %> </font>
-        <%= link_to "Comentarios", post%>
-        <% if signed_in? %>
-            <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %> 
-        <% end %>
-        <br>
-        <%= post.content %>
+        <b><%= seccion.nombre %></b> 
+        <%= link_to "o", seccion %>
+        
     </p> 
 <% end %>
+
 </tbody>

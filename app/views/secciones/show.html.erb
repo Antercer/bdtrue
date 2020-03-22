@@ -1,0 +1,23 @@
+<h1><center> <%= @seccion.nombre %> </center></h1>
+
+<center> <%= link_to "Crear un post", new_post_path %></center>
+
+<tbody>
+
+
+<% @posts.each do |post| %>
+    <p style = "margin: 20px; border:2px solid gray;">
+        <%= link_to "post", post %>
+        
+        <b><%= post %></b> 
+        <b><%= post.title %></b> 
+        <font color="gray"> <%= post.post_datetime %> </font>
+        <%= link_to "Comentarios", post%>
+        <% if signed_in? %>
+            <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %> 
+        <% end %>
+        <br>
+        <%= post.content %>
+    </p> 
+<% end %>
+</tbody>
