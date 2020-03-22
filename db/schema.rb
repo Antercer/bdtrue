@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200322185311) do
+ActiveRecord::Schema.define(version: 20200322191438) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name"
@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20200322185311) do
     t.boolean  "inactivo"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "board_id"
   end
+
+  add_index "posts", ["board_id"], name: "index_posts_on_board_id"
 
   create_table "seccions", force: :cascade do |t|
     t.string   "nombre"

@@ -12,26 +12,24 @@ class PostsController < ApplicationController
 
     def destroy
         post = Post.find(params[:id])
-        @board_name = params[:board_name]
         post.destroy
-        redirect_to '/secciones'#, board:"Games"
+        redirect_to '/index'#, board:"Games"
     end
 
     def create
         @post = Post.new(post_params)
-        
         @post.post_datetime = Time.now
-        
+        @post.content = post_params[:board_id]
         if @post.save
           redirect_to @post
         else
           render :new
         end
     end
-    
+
     private
         def post_params
-                params.require(:post).permit(:title, :content, :imagen_url)
+            params.require(:post).permit(:title, :content, :imagen_url, :board_id)
         end
     
 end

@@ -1,9 +1,8 @@
 <h1><center> <%= @board.name %> </center></h1>
 
-<center> <%= link_to "Crear un post", new_post_path %></center>
+<center> <%= link_to "Crear un post", new_post_path(board_id: @board.id) %></center>
 
 <tbody>
-
 
 <% @posts.each do |post| %>
     <p style = "margin: 20px; border:2px solid gray;">        

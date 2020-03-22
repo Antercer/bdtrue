@@ -5,7 +5,6 @@ class BoardsController < ApplicationController
 
     def show
         @board = Board.find(params[:id])
-        @posts = Post.all
+        @posts = Post.where(board_id: @board)
     end
-    
 end
