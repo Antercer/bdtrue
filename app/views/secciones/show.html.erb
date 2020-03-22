@@ -9,7 +9,7 @@
     <p style = "margin: 20px; border:2px solid gray;">
         <%= link_to "post", post %>
         
-        <b><%= post %></b> 
+        <font color="red"> <%= @users.find(post.user_id) %> </font>
         <b><%= post.title %></b> 
         <font color="gray"> <%= post.post_datetime %> </font>
         <%= link_to "Comentarios", post%>

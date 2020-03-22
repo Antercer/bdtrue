@@ -6,6 +6,7 @@ class SeccionesController < ApplicationController
     def show
         @seccion = Seccion.find(params[:id])
         @posts = Post.all
+        @users = User.all
     end
     
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200322205320) do
+ActiveRecord::Schema.define(version: 20200322214815) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name"
@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 20200322205320) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "board_id"
+    t.integer  "user_id"
   end
 
   add_index "posts", ["board_id"], name: "index_posts_on_board_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "seccions", force: :cascade do |t|
     t.string   "nombre"

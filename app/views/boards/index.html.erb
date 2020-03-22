@@ -2,8 +2,6 @@
 
 <tbody>
 
-<%= link_to "games", '/boards/1' %>
-
 <ul style = "margin: 20px; border:2px solid gray;">
     <% @boards.each do |board| %>
         <li><%= link_to board.name, board %></li> 

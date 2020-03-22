@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :login
-
-  
+  has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

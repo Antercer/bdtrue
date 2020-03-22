@@ -19,7 +19,8 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         @post.post_datetime = Time.now
-        @post.content = post_params[:board_id]
+        @post.user_id = current_user.id
+
         if @post.save
           redirect_to @post
         else
