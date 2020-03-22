@@ -1,15 +1,12 @@
 <h1><center> Índice </center></h1>
 
 <tbody>
-
-<%= link_to "games", '/secciones/1' %>
-
-<% @secciones.each do |seccion| %>
-    <p style = "margin: 20px; border:2px solid gray;">
-        <b><%= seccion.nombre %></b> 
-        <%= link_to "o", seccion %>
-        
-    </p> 
-<% end %>
+<p style = "margin: 20px; border:2px solid gray;">
+<ul style = "margin: 20px; border:2px solid gray;">
+    <% @secciones.each do |seccion| %>
+        <li><%= seccion.nombre %></li> 
+    <% end %>
+</ul>
+</p>         
 
 </tbody>
