@@ -1,0 +1,22 @@
+<h1>Nuevo Post</h1>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :Título %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :Contenido%>
+    <%= f.text_field :content %>
+  </div>
+
+  <div>
+    <%= f.label :imagen_url %>
+    <%= f.text_field :imagen_url %>
+  </div>
+  
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
