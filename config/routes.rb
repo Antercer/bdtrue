@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/posts', to: 'posts#show'
   resources :posts
   resources :boards
+  resources :replies
 end
