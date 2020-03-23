@@ -8,8 +8,13 @@
 </head>
 <body style="background-color:lightblue;">
 
+<p style="text-align:center;">
+  <% if request.url != 'http://localhost:3000/index' %>
+    <%= link_to "Índice", '/index' %>
+  <% end %>
+</p>
 
-<div>
+<div>  
   <p style="text-align:right;">
     <% if signed_in? %>
       <%= link_to current_user.username, edit_user_registration_path(current_user) %>
