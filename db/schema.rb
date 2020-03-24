@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200323233050) do
+ActiveRecord::Schema.define(version: 20200324025525) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "name"
@@ -93,5 +93,16 @@ ActiveRecord::Schema.define(version: 20200323233050) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true
+
+  create_table "votos", force: :cascade do |t|
+    t.integer  "usuario_id"
+    t.integer  "post_id"
+    t.boolean  "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votos", ["post_id"], name: "index_votos_on_post_id"
+  add_index "votos", ["usuario_id"], name: "index_votos_on_usuario_id"
 
 end
