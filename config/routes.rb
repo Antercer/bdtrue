@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :boards
   resources :replies
-  
+  resources :subadmin
 end
