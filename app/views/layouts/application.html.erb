@@ -6,16 +6,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body style="background-color:lightblue;">
+<body style="background-color:lightblue;text-align:left;">
 
-<p style="text-align:center;">
   <% if request.url != 'http://localhost:3000/index' %>
     <%= link_to "Índice", '/index' %>
   <% end %>
-</p>
 
-<div>  
-  <p style="text-align:right;">
+  <span style="float:right;">
     <% if signed_in? %>
       <%= link_to current_user.username, edit_user_registration_path(current_user) %>
       <%= link_to "(salir)", destroy_user_session_path, method: :delete %>
@@ -23,8 +20,8 @@
       <%= link_to "Registrarse", new_user_registration_path %>
       <%= link_to "Ingresar", new_user_session_path %>
     <% end %>
-  </p>
-</div>
+  </span>
+
 
 <%= yield %>
 

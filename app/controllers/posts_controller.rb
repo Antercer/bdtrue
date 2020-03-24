@@ -15,8 +15,9 @@ class PostsController < ApplicationController
 
     def destroy
         post = Post.find(params[:id])
+        board = Board.find(post.board_id)
         post.destroy
-        redirect_to '/index'#, board:"Games"
+        redirect_to board
     end
 
     def create

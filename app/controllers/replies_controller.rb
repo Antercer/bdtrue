@@ -5,6 +5,14 @@ class RepliesController < ApplicationController
         @reply = Reply.new
     end
 
+    def destroy
+        reply = Reply.find(params[:id])
+        post = Post.find(reply.post_id)
+        reply.destroy
+      
+        redirect_to post
+      end
+
     def create
         @reply = Reply.new(reply_params)
         @reply.reply_datetime = Time.now
