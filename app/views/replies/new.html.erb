@@ -1,0 +1,16 @@
+<h1>Nueva Respuesta</h1>
+
+<%= form_for @reply do |f| %>
+  <div>
+    <%= f.label :Comentario %>
+    <%= f.text_field :contenido %>
+  </div>
+
+  <div>
+  <%= f.hidden_field :post_id, value: @post_id %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

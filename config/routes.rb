@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/boards', to: 'boards#show'
   get '/index', to: 'boards#index'
   get '/posts', to: 'posts#show'
+  get '/replies', to: 'posts#show'
   resources :posts
   resources :boards
   resources :replies

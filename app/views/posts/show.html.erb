@@ -12,23 +12,25 @@
             <%= link_to "Eliminar", @post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %> 
         <% end %>
     <% end %>
-
     <br>
-
     <%= @post.content %>
-
-    <p style = "margin: 20px; border:2px solid gray;">       
+    <center> <%= link_to "Responde a este post", new_reply_path(post_id: @post.id) %></center>
+        <p style = "margin: 20px">
         <% @replies.each do |reply| %>    
             <font color="red"> <%= @users.find(reply.user_id).username %> </font>
             <font color="gray"> <%= reply.reply_datetime %> </font>                        
+        
             <% if signed_in? %>
                 <% if reply.user_id == current_user.id || current_user.id == Board.find(@post.board_id).user_id %>
                 
                 <% end %>
             <% end %>
+                
             <br>
             <%= reply.contenido %>
+            <br><br>
         <% end %>
-    </p> 
+        </p>
+
 
 </p> 
