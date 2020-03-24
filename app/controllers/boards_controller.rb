@@ -9,7 +9,6 @@ class BoardsController < ApplicationController
         @users = User.all
     end
 
-
     def new
         @board = Board.new
     end

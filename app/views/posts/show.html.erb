@@ -1,3 +1,4 @@
+<h1><center> <%= @board.name %> </center></h1> 
 <h1>Detalles del Post lmao</h1>
 <p style = "margin: 20px; border:2px solid gray;">
 
@@ -15,5 +16,19 @@
     <br>
 
     <%= @post.content %>
+
+    <p style = "margin: 20px; border:2px solid gray;">       
+        <% @replies.each do |reply| %>    
+            <font color="red"> <%= @users.find(reply.user_id).username %> </font>
+            <font color="gray"> <%= reply.reply_datetime %> </font>                        
+            <% if signed_in? %>
+                <% if reply.user_id == current_user.id || current_user.id == Board.find(@post.board_id).user_id %>
+                
+                <% end %>
+            <% end %>
+            <br>
+            <%= reply.contenido %>
+        <% end %>
+    </p> 
 
 </p> 
