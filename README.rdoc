@@ -1,1 +1,5 @@
 La página principal es http://localhost:3000/index. Hice un par de cambios al modelo (usuarios usan id como clave primaria en lugar de nombre) por comodidad. Ah, y "secciones" fue cambiado a "boards" porque tuve problemas con los plurales. Este último push está quizá pasado de la hora porque había olvidado el readme ;-; Igual hay algunas tablas que se pueden crear por consola pero no a través de la página.
+
+El error no era a causa de que me faltaba una migración, lo que hay que hacer (no sabía que era necesario para correr archivos clonados de github, perdón por lo tardío de este commit) es correr en consola
+>bundle update rake
+>bundle exec rake db:migrate
